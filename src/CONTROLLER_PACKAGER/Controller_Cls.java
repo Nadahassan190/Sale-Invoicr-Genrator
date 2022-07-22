@@ -257,6 +257,7 @@ public class Controller_Cls implements ActionListener, ListSelectionListener {
             linesTableModel.fireTableDataChanged();
             Frame.getHeaderTable().fireTableDataChanged();
         }
+        Frame.getInvoiceHeaderTable().setRowSelectionInterval(selectedInvHeader, selectedInvHeader);
         ItemFRAME.setVisible(false);
         ItemFRAME.dispose();
         ItemFRAME = null;
