@@ -2,6 +2,7 @@
 package MODEL_PACKAGE;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 
@@ -14,6 +15,11 @@ public class Invoices_Header_Table_Cls extends AbstractTableModel {
     public Invoices_Header_Table_Cls(ArrayList<Invoices_Header_Cls> InvoicesArrayt) {
         this.invheaderslists = InvoicesArrayt;
     }
+    
+     public List<Invoices_Header_Cls> getInvoicesArray() {
+        return invheaderslists;
+    }
+    
     
     @Override
     public int getRowCount() {

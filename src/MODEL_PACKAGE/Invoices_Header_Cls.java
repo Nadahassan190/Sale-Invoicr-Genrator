@@ -16,6 +16,9 @@ public class Invoices_Header_Cls {
     private Double ItemTotal;
    private ArrayList<Invoice_Line_Cls> lines; 
 
+    public Invoices_Header_Cls() {
+    }
+
     public Invoices_Header_Cls(int Number, String Customer, String Date ) {
         this.Number = Number;
         this.Customer = Customer;

@@ -178,7 +178,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         });
 
-        CreateNewItemButton.setText("Save");
+        CreateNewItemButton.setText("Add new item");
         CreateNewItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreateNewItemButtonActionPerformed(evt);
@@ -379,21 +379,27 @@ public class Main_Frame extends javax.swing.JFrame {
     public ArrayList<Invoice_Line_Cls> GetItemArray() {
         return ItemArray;
     }
+    
+    public void setItemArray(ArrayList<Invoice_Line_Cls> Items){
+        this.ItemArray = Items;
+//        ItemTable= new Invoice_line_Table_Cls(ItemArray);
+//        this.InvoiceItemTable.setModel(ItemTable);
+    }
+    
+    
+        public void setInvheaders(ArrayList<Invoices_Header_Cls> invoices) {
+        this.HeaderArray = invoices;
+//        HeaderTable= new Invoices_Header_Table_Cls(HeaderArray);
+//        this.InvoiceHeaderTable.setModel(HeaderTable);
+    }
+
+    
     public ArrayList<Invoices_Header_Cls> getHeaderArray() {
         return HeaderArray;
     }
     
-    public void setItemArray(ArrayList<Invoice_Line_Cls> ItemArray){
-        this.ItemArray = ItemArray;
-        ItemTable= new Invoice_line_Table_Cls(ItemArray);
-        this.InvoiceHeaderTable.setModel(HeaderTable);
-    }
 
-    public void setInvheaders(ArrayList<Invoices_Header_Cls> invoices) {
-        this.HeaderArray = invoices;
-        HeaderTable= new Invoices_Header_Table_Cls(HeaderArray);
-        this.InvoiceHeaderTable.setModel(HeaderTable);
-    }
+
 
     public Controller_Cls getController() {
         return Controller;
@@ -415,6 +421,14 @@ public class Main_Frame extends javax.swing.JFrame {
         return HeaderTable;
     }
 
+    
+        public Invoice_line_Table_Cls getItemTable() {
+        return ItemTable;
+    }
+    public void setInvLineTableModel(Invoice_line_Table_Cls invLineTableModel) {
+        this.ItemTable = invLineTableModel;
+    }
+    
     public JTable getInvoiceHeaderTable() {
         return InvoiceHeaderTable;
     }
@@ -438,5 +452,7 @@ public class Main_Frame extends javax.swing.JFrame {
     public JTextField getCustomerNameFeild() {
         return CustomerNameFeild;
     }
+
+ 
 
 }
