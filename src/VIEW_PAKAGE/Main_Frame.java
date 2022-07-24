@@ -356,7 +356,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextField InvoiceDateField;
     private javax.swing.JLabel InvoiceDateLabel;
     private javax.swing.JTable InvoiceHeaderTable;
-    private javax.swing.JTable InvoiceItemTable;
+    public javax.swing.JTable InvoiceItemTable;
     private javax.swing.JLabel InvoiceTotalFeild;
     private javax.swing.JLabel InvoiceTotalLabel;
     private javax.swing.JMenuItem LoadFileButton;
@@ -425,10 +425,22 @@ public class Main_Frame extends javax.swing.JFrame {
         public Invoice_line_Table_Cls getItemTable() {
         return ItemTable;
     }
-    public void setInvLineTableModel(Invoice_line_Table_Cls invLineTableModel) {
-        this.ItemTable = invLineTableModel;
-    }
+//    public void setInvLineTableModel(Invoice_line_Table_Cls invLineTableModel) {
+//        this.ItemTable = invLineTableModel;
+//    }
     
+        
+        
+        
+    public Invoices_Header_Table_Cls getHeaderTableModel() {
+        return HeaderTable;
+    }
+
+    public void setHeaderTableModel(Invoices_Header_Table_Cls headerTableModel) {
+        this.HeaderTable = headerTableModel;
+    }
+        
+        
     public JTable getInvoiceHeaderTable() {
         return InvoiceHeaderTable;
     }
@@ -436,6 +448,16 @@ public class Main_Frame extends javax.swing.JFrame {
     public JTable getInvoiceItemTable() {
         return InvoiceItemTable;
     }
+
+    public void setInvoiceItemTable(JTable InvoiceItemTable) {
+        this.InvoiceItemTable = InvoiceItemTable;
+    }
+
+    public void setInvoiceHeaderTable(JTable InvoiceHeaderTable) {
+        this.InvoiceHeaderTable = InvoiceHeaderTable;
+    }
+    
+
 
     public JLabel getInvoiceNumberFeild() {
         return InoiceNumberFeild;
