@@ -429,61 +429,19 @@ public class Controller_Cls implements ActionListener, ListSelectionListener {
 //            Frame.getInvoiceTotalFeild().setText("");
 
 //        }
-        
-//  
-//        int lineIndex = Frame.getInvoiceItemTable().getSelectedRow();
-//         int selectedInvoiceIndex = Frame.getInvoiceItemTable().getSelectedRow();
-//   int InvoiceIndex = Frame.getInvoiceItemTable().getSelectedRow();
-//        if (selectedInvoiceIndex != -1)
-//        {
-//        Invoice_Line_Cls line = Frame.getItemTable().getLines().get(lineIndex);
-//        Frame.getItemTable().getLines().remove(lineIndex);
-//        
-////        Frame.getHeaderTable().fireTableDataChanged();
-//        Frame.getItemTable().fireTableDataChanged();
-//        Frame.getInvoiceTotalFeild().setText("" + line.getInvoice().getItemTotal());
-//         JOptionPane.showMessageDialog(null, "Line Deleted Successfully ! ");
-//         displayInvoices();
-//        }
-//                  
+ 
         }
-    
-//    
-//     private void displayInvoices(){
-//         for (Invoices_Header_Cls header :Frame.getHeaderArray()) {
-//             System.out.println(header);
-//         }
-//     }
-    
+
         
 
     @Override
     public void valueChanged(ListSelectionEvent e)
     {
-
-//        
-//        int selectedInvIndex = Frame.getInvoiceHeaderTable().getSelectedRow();
-//        System.out.println("Invoice selected:" + selectedInvIndex);
-//        if (selectedInvIndex != -1) {
-//            Invoices_Header_Cls selectedInv = Frame.getHeaderArray().get(selectedInvIndex);
-//
-//            ArrayList<Invoice_Line_Cls> lines = selectedInv.getLines();
-//            Invoice_line_Table_Cls lineTableModel = new Invoice_line_Table_Cls(lines);
-//            Frame.setItemArray(lines);
-//            Frame.getInvoiceItemTable().setModel(lineTableModel);
-//            Frame.getCustomerNameFeild().setText(selectedInv.getCustomer());
-//            Frame.getInvoiceNumberFeild().setText("" + selectedInv.getNumber());
-//            Frame.getInvoiceTotalFeild().setText("" + selectedInv.getItemTotal());
-//        Frame.getInvoiceDateField().setText(selectedInv.getDate());
-//        
-//        
-//        
-        int selectedInvItem = Frame.getInvoiceHeaderTable().getSelectedRow();
         int selectedInvIndex = Frame.getInvoiceHeaderTable().getSelectedRow();
         System.out.println("Invoice selected:" + selectedInvIndex);
-        if (selectedInvIndex != -1  ) {
+        if (selectedInvIndex != -1) {
             Invoices_Header_Cls selectedInv = Frame.getHeaderArray().get(selectedInvIndex);
-         
+
             ArrayList<Invoice_Line_Cls> lines = selectedInv.getLines();
             Invoice_line_Table_Cls lineTableModel = new Invoice_line_Table_Cls(lines);
             Frame.setItemArray(lines);
@@ -491,8 +449,25 @@ public class Controller_Cls implements ActionListener, ListSelectionListener {
             Frame.getCustomerNameFeild().setText(selectedInv.getCustomer());
             Frame.getInvoiceNumberFeild().setText("" + selectedInv.getNumber());
             Frame.getInvoiceTotalFeild().setText("" + selectedInv.getItemTotal());
-        Frame.getInvoiceDateField().setText(selectedInv.getDate());
+            Frame.getInvoiceDateField().setText(selectedInv.getDate());
         
+//        
+//        
+//        int selectedInvItem = Frame.getInvoiceHeaderTable().getSelectedRow();
+//        int selectedInvIndex = Frame.getInvoiceHeaderTable().getSelectedRow();
+//        System.out.println("Invoice selected:" + selectedInvIndex);
+//        if (selectedInvIndex != -1  ) {
+//            Invoices_Header_Cls selectedInv = Frame.getHeaderArray().get(selectedInvIndex);
+//         
+//            ArrayList<Invoice_Line_Cls> lines = selectedInv.getLines();
+//            Invoice_line_Table_Cls lineTableModel = new Invoice_line_Table_Cls(lines);
+//            Frame.setItemArray(lines);
+//            Frame.getInvoiceItemTable().setModel(lineTableModel);
+//            Frame.getCustomerNameFeild().setText(selectedInv.getCustomer());
+//            Frame.getInvoiceNumberFeild().setText("" + selectedInv.getNumber());
+//            Frame.getInvoiceTotalFeild().setText("" + selectedInv.getItemTotal());
+//            Frame.getInvoiceDateField().setText(selectedInv.getDate());
+//        
         }
 
     }
