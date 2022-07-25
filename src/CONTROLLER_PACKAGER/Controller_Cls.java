@@ -381,6 +381,8 @@ public class Controller_Cls implements ActionListener, ListSelectionListener {
 
   //                                                   TABLE LISENTER CHANGE CONTROLL
     
+    
+    
         private void DeleteItem()
     {
         int lineIndex = Frame.getInvoiceItemTable().getSelectedRow();
