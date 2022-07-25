@@ -34,7 +34,6 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         InvoiceItemTable = new javax.swing.JTable();
-        InvoiceItemTable.getSelectionModel().addListSelectionListener(Controller);
         jScrollPane2 = new javax.swing.JScrollPane();
         InvoiceHeaderTable = new javax.swing.JTable();
         InvoiceHeaderTable.getSelectionModel().addListSelectionListener(Controller);
@@ -73,6 +72,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jLabel5.setText("Invoice Item");
 
+        InvoiceItemTable.setAutoCreateRowSorter(true);
         InvoiceItemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -108,7 +108,10 @@ public class Main_Frame extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        InvoiceItemTable.setShowGrid(true);
+        InvoiceItemTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(InvoiceItemTable);
+        InvoiceItemTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         InvoiceHeaderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,6 +168,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        InvoiceHeaderTable.setShowGrid(true);
         jScrollPane2.setViewportView(InvoiceHeaderTable);
 
         jLabel6.setText("Invoice Table");
@@ -356,7 +360,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextField InvoiceDateField;
     private javax.swing.JLabel InvoiceDateLabel;
     private javax.swing.JTable InvoiceHeaderTable;
-    public javax.swing.JTable InvoiceItemTable;
+    private javax.swing.JTable InvoiceItemTable;
     private javax.swing.JLabel InvoiceTotalFeild;
     private javax.swing.JLabel InvoiceTotalLabel;
     private javax.swing.JMenuItem LoadFileButton;
@@ -382,15 +386,15 @@ public class Main_Frame extends javax.swing.JFrame {
     
     public void setItemArray(ArrayList<Invoice_Line_Cls> Items){
         this.ItemArray = Items;
-//        ItemTable= new Invoice_line_Table_Cls(ItemArray);
-//        this.InvoiceItemTable.setModel(ItemTable);
+        ItemTable= new Invoice_line_Table_Cls(ItemArray);
+        this.InvoiceItemTable.setModel(ItemTable);
     }
     
     
         public void setInvheaders(ArrayList<Invoices_Header_Cls> invoices) {
         this.HeaderArray = invoices;
-//        HeaderTable= new Invoices_Header_Table_Cls(HeaderArray);
-//        this.InvoiceHeaderTable.setModel(HeaderTable);
+        HeaderTable= new Invoices_Header_Table_Cls(HeaderArray);
+        this.InvoiceHeaderTable.setModel(HeaderTable);
     }
 
     
@@ -416,6 +420,12 @@ public class Main_Frame extends javax.swing.JFrame {
     public void setHeaderTable(Invoices_Header_Table_Cls HeaderTable) {
         this.HeaderTable = HeaderTable;
     }
+    
+  
+        public void setitemTable(Invoice_line_Table_Cls ItemTable) {
+        this.ItemTable = ItemTable;
+    }
+
      
     public Invoices_Header_Table_Cls getHeaderTable() {
         return HeaderTable;
@@ -428,7 +438,7 @@ public class Main_Frame extends javax.swing.JFrame {
 //    public void setInvLineTableModel(Invoice_line_Table_Cls invLineTableModel) {
 //        this.ItemTable = invLineTableModel;
 //    }
-    
+//    
         
         
         

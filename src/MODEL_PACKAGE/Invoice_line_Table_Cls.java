@@ -36,10 +36,10 @@ public class Invoice_line_Table_Cls extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int Row, int Column) {
-       if(ItemArray==null) {
-              return"";
-        }
-          else{
+//                if (ItemArray == null) {
+//            return "";
+//        } else {
+    
           Invoice_Line_Cls ItemArrayLst = ItemArray.get(Row);
           switch(Column) 
            {
@@ -51,11 +51,24 @@ public class Invoice_line_Table_Cls extends AbstractTableModel {
            default : return "";
            }
           }
-    }
+//          }
+   
     
     @Override
     public String getColumnName(int Col) {
         return columns[Col];
     }
+ 
+//
+//
+//        @Override
+//    public boolean isCellEditable(int rowIndex, int columnIndex) {
+//    return true;
+//    }
+//
+//    
+    
+    
+    
     
 }
