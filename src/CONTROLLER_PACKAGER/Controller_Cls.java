@@ -383,7 +383,6 @@ public class Controller_Cls implements ActionListener, ListSelectionListener {
     
         private void DeleteItem()
     {
-
         int lineIndex = Frame.getInvoiceItemTable().getSelectedRow();
          int selectedInvoiceIndex = Frame.getInvoiceItemTable().getSelectedRow();
        int InvoiceIndex = Frame.getInvoiceItemTable().getSelectedRow();
@@ -397,7 +396,6 @@ public class Controller_Cls implements ActionListener, ListSelectionListener {
         Frame.getInvoiceTotalFeild().setText("" + line.getInvoice().getItemTotal());
          JOptionPane.showMessageDialog(null, "Line Deleted Successfully ! ");
          displayInvoices();
-  
         }
         }
     
